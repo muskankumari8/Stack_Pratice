@@ -1,0 +1,39 @@
+import java.util.*;
+public class Array_List {
+    public static class Arlist{
+        ArrayList<Integer> ll = new ArrayList<>();
+        int size = 0;
+        void push(int val){
+            ll.add(val);
+        }
+        boolean isEmpty(){
+            return ll.size() == 0;
+        }
+        int pop(){
+            if(isEmpty()){
+                return -1;
+            }
+            int top = ll.remove(ll.size() - 1);
+            return top;
+        }
+        int peek(){
+            if(isEmpty()){
+                return -1;
+            }
+            return ll.get(ll.size() - 1);
+        }
+        void display(){
+            System.out.println(ll);
+        }
+    }
+    public static void main(String[] args) {
+        Arlist al = new Arlist();
+        al.push(1);
+        al.push(2);
+        al.push(3);
+        al.display();
+        System.out.println("Rmove element: "+al.pop());
+        al.display();
+        System.out.println(al.peek());
+    }
+}
